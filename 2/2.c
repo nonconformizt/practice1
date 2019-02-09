@@ -37,12 +37,12 @@ void mas_read(struct arr *mas) {
     do {
         printf("Type the number of rows: ");
         scanf("%d", &mas->m);
-    } while (mas->m <= 0);
+    } while (mas->m <= 0 || mas->m > NAME);
 
     do {
         printf("Type the number columns: ");
         scanf("%d", &mas->n);
-    } while (mas->n <= 0);
+    } while (mas->n <= 0 || mas->n > NAME);
 
     for (i = 0; i < mas->m; ++i) {
         for (j = 0; j < mas->n; ++j) {
