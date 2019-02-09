@@ -14,7 +14,7 @@ void read_matrix( float** M, int* m, int* n )
     do {
         cin >> *n;
     } while ( *n < 1 || *n > 100 );
-    
+
     cout << "Вводите элементы матрицы\n";
     for (int i = 0; i < *m; ++i) {
         cout << "Строка " << i << endl;
