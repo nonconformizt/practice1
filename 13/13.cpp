@@ -20,6 +20,7 @@ void read(Matrix& a)
 
 	} while (a.M <= 0 || a.M > 100);
 
+	std::cout << "Enter the matrix: \n";
 	for (int i = 0; i < a.M; ++i)
 	{
 		for (int j = 0; j < a.M; ++j)

@@ -5,8 +5,10 @@ using namespace std;
 
 void read_matrix( float** M, int* n )
 {
-    cout << "Введите размерность матрицы\n";
-    cin >> *n;
+    cout << "Введите размерность матрицы \n(положительное число не более " << DIM << ")\n";
+    do {
+        cin >> *n;
+    } while ( *n < 1 || *n > 100 );
     cout << "Вводите элементы матрицы\n";
     for (int i = 0; i < *n; ++i) {
         cout << "Строка " << i << endl;
@@ -25,7 +27,6 @@ void show_matrix( float** M, int n )
         cout << "\n";
     }
 }
-
 
 void count_avg( float** M, int n )
 {

@@ -33,6 +33,8 @@ void read(Matrix& a)
 
 	} while (a.column <= 0 || a.column > 100);
 
+
+	std::Cout << "Enter the matrix: \n";
 	for (int i = 0; i < a.row; ++i)
 	{
 		for (int j = 0; j < a.column; ++j)
