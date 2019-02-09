@@ -12,13 +12,13 @@ int main(){
 		std::cout<<"\n";
 		std::cin>>n>>m;
 	}while (n>100 || m>100 || n<0 || m<0);
-	std::cout<<"Enter array";
+	std::cout<<"Enter array:\n";
 	n++;
 	int Matrix[101][101];
 	read(&Matrix[0][0],n,m);
 	int count=0;
 	count=base_work(&Matrix[0][0],n,m,count);
-	std::cout<<count;
+	std::cout<<"Answer is "<<count;
 	//write(&Matrix[0][0],n,m);
 	return 0;
 }
