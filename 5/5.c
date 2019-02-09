@@ -77,12 +77,12 @@ int SeekColumn(double Matrix[][100],int m,int n)
     {
         for(j = 0; j < m; j++)
         {
-            if(Matrix[m][n] > 0)
+            if(Matrix[j][i] > 0 || f == 1)
                 f = 1;
         }
         if(f == 0)
         {
-            col = n-1;
+            col = j-1;
         }
         f = 0;
     }
