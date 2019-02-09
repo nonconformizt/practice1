@@ -62,10 +62,15 @@ void mas_read(struct arr *mas) {
         scanf("%d", &mas->m);
         if (!(mas->m % 2)) {
             printf("Error! Order must be an odd number\n");
-        } else {
-            break;
+			continue;
         }
-    }
+		if (mas->m >= NAME) {
+			printf("Error! Can't handle more than 100 elements!\n");
+			continue;
+		} else {
+			break;
+		}
+    }	
     for (i = 0; i < mas->m; ++i) {
         for (j = 0; j < mas->m; ++j) {
             printf("Type %d%s element in %d%s row: ", j, (j == 1) ? "st" : (j == 2) ? "nd" : (j == 3) ? "rd" : "th", i, (i == 1) ? "st" : (i == 2) ? "nd" : (i == 3) ? "rd" : "th");
