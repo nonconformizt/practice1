@@ -25,7 +25,7 @@ int main() {
     do{
         printf("Enter the number of column\n");
         scanf("%d",&p);
-    }while(p > n || p < 0);
+    }while(p > n-1 || p < 0);
     col = SeekColumn(Matrix,m,n);
     if(col != -1) {
         for (i = 0; i < m; i++) {
