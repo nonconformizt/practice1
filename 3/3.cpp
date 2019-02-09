@@ -6,7 +6,7 @@ bool sravn(int *A,int i,int n, int k);
 bool check(int *A,int m,int n);
 int main(){
 	int m,n,i,j;
-	system("chcp 1251 >nul");
+	//system("chcp 1251 >nul");
 	std::cout<<"Enter (m * n) not big 100 * 100:";
 	do{
 		std::cout<<"\n";
