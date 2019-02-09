@@ -46,7 +46,7 @@ void count_avg( float** M, int n )
     }
 
     // диагонали ниже главной
-    for (int x = 1; x < n - 1; x++) {
+    for (int x = 1; x < n; x++) {
         avg = count = 0;
         i = x;
         j = 0;

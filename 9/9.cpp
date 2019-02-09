@@ -17,7 +17,7 @@ void read_matrix( float** M, int* m, int* n )
 
     cout << "Enter matrix elements\n";
     for (int i = 0; i < *m; ++i) {
-        cout << "Строка " << i << endl;
+        cout << "Row " << i << endl;
         for (int j = 0; j < *n; ++j) {
             cin >> M[i][j];
         }
