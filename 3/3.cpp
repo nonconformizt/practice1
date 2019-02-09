@@ -7,7 +7,7 @@ bool check(int *A,int m,int n);
 int main(){
 	int m,n,i,j;
 	system("chcp 1251 >nul");
-	std::cout<<"Enter (m * n) dont bolshe 100 * 100:";
+	std::cout<<"Enter (m * n) not big 100 * 100:";
 	do{
 		std::cout<<"\n";
 		std::cin>>n>>m;
