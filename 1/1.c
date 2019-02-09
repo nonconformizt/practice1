@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define NAME (512)
+#define NAME (100)
 
 struct arr {
     double a[NAME][NAME];
