@@ -8,6 +8,7 @@ int main(){
 		std::cout<<"\n";
 		std::cin>>n>>m;
 	}while (n>100 || m>100 || n<0 || m<0);
+	std::cout<<"Enter array:\n";
 	for (i=0;i<n;i++){
 		for (j=0;j<m;j++){
 			std::cin>>Matrix[i][j];
