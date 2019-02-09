@@ -15,17 +15,17 @@ int main() {
     do{
         printf("Enter the number of rows\n");
         scanf("%d",&m);
-    }while(m > 100 || m < 1);
+    }while(m > 100 || m < 0);
     do{
         printf("Enter the number of columns\n");
         scanf("%d",&n);
-    }while(n > 100 || n < 1);
+    }while(n > 100 || n < 0);
     read(Matrix,m,n);
     write(Matrix,m,n);
     do{
         printf("Enter the number of column\n");
         scanf("%d",&p);
-    }while(p > n || p < 1);
+    }while(p > n || p < 0);
     col = SeekColumn(Matrix,m,n);
     if(col != -1) {
         for (i = 0; i < m; i++) {
