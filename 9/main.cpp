@@ -3,7 +3,8 @@ using namespace std;
 
 #define DIM 512
 
-void read_matrix( float** M, int* m, int* n ) {
+void read_matrix( float** M, int* m, int* n )
+{
     cout << "Введите высоту матрицы\n";
     cin >> *m;
     cout << "Введите ширину матрицы\n";
@@ -17,15 +18,31 @@ void read_matrix( float** M, int* m, int* n ) {
     }
 }
 
-void show_matrix( float** M, int* m, int* n ) {
+void show_matrix( float** M, int m, int n )
+{
     cout << "==== Матрица ====\n";
-    for (int i = 0; i < *m; ++i) {
-        for (int j = 0; j < *n; ++j)
+    for (int i = 0; i < m; ++i) {
+        for (int j = 0; j < n; ++j)
             cout << M[i][j] << "  ";
         cout << "\n";
     }
 }
 
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void bubble_sort( float** M, int m, int n )
+{
+   int i, j;
+   for (i = 0; i < m; i++)
+       for (j = 0; j < m-i-1; j++)
+           if (M[j][0] > M[j+1][0])
+              swap(M[j], M[j+1]);
+}
 
 int main() {
     system("chcp 65001 > nul");
@@ -36,6 +53,10 @@ int main() {
         A[x] = new float[DIM];
 
     read_matrix(A, &m, &n);
+    show_matrix(A, m, n);
+
+    bubble_sort(A, m, n);
+    show_matrix(A, m, n);
 
     getchar();
 }
