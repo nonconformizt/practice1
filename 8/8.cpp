@@ -1,8 +1,8 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 
-const int m = 10, n = 15;
+const int m = 100, n = 100;
 
 void read_M_N(int *p_M, int *p_N)
 {
@@ -61,7 +61,6 @@ void end_a(int help[m][n], int M, int N)
 }
 int main()
 {
-	system("chcp 1251 > nul");
 
 	int i, j, M, N;
 	int a[m][n] = { 0 }, max[n] = { INT_MIN }, help[m][n];
@@ -71,6 +70,5 @@ int main()
 	sort_a(a, M, N, max, help);
 	end_a(help, M, N);
 
-	system("pause");
-	return 1;
+	return 0;
 }
