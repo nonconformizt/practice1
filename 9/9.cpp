@@ -5,17 +5,17 @@ using namespace std;
 
 void read_matrix( float** M, int* m, int* n )
 {
-    cout << "Введите высоту матрицы\n";
+    cout << "Enter matrix height\n";
     do {
         cin >> *m;
     } while ( *m < 1 || *m > 100 );
 
-    cout << "Введите ширину матрицы\n";
+    cout << "Enter matrix width\n";
     do {
         cin >> *n;
     } while ( *n < 1 || *n > 100 );
 
-    cout << "Вводите элементы матрицы\n";
+    cout << "Enter matrix elements\n";
     for (int i = 0; i < *m; ++i) {
         cout << "Строка " << i << endl;
         for (int j = 0; j < *n; ++j) {
@@ -26,7 +26,7 @@ void read_matrix( float** M, int* m, int* n )
 
 void show_matrix( float** M, int m, int n )
 {
-    cout << "==== Матрица ====\n";
+    cout << "==== MATRIX ====\n";
     for (int i = 0; i < m; ++i) {
         for (int j = 0; j < n; ++j)
             cout << M[i][j] << "  ";
@@ -51,7 +51,6 @@ void bubble_sort( float** M, int m, int n )
 }
 
 int main() {
-    system("chcp 65001 > nul");
     int m, n;
     float ** A = new float*[DIM];
     for (long x = 0; x < DIM; x++)

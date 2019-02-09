@@ -5,13 +5,13 @@ using namespace std;
 
 void read_matrix( float** M, int* n )
 {
-    cout << "Введите размерность матрицы \n(положительное число не более " << DIM << ")\n";
+    cout << "Enter matrix size \n (positive number less than " << DIM + 1 << ")\n";
     do {
         cin >> *n;
     } while ( *n < 1 || *n > 100 );
-    cout << "Вводите элементы матрицы\n";
+    cout << "Enter matrix elements\n";
     for (int i = 0; i < *n; ++i) {
-        cout << "Строка " << i << endl;
+        cout << "Row " << i << endl;
         for (int j = 0; j < *n; ++j) {
             cin >> M[i][j];
         }
@@ -20,7 +20,7 @@ void read_matrix( float** M, int* n )
 
 void show_matrix( float** M, int n )
 {
-    cout << "==== Матрица ====\n";
+    cout << "==== MATRIX ====\n";
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j)
             cout << M[i][j] << "  ";
@@ -42,7 +42,7 @@ void count_avg( float** M, int n )
             avg += M[i][j];
         }
         avg /= count;
-        cout << "Среднее значение диагонали равно " << avg << endl;
+        cout << "Average diagonal value is " << avg << endl;
     }
 
     // диагонали ниже главной
@@ -54,13 +54,12 @@ void count_avg( float** M, int n )
             avg += M[i][j];
         }
         avg /= count;
-        cout << "Среднее значение диагонали равно " << avg << endl;
+        cout << "Average diagonal value is " << avg << endl;
     }
 }
 
 
 int main() {
-    system("chcp 65001 > nul");
     int n;
     auto ** A = new float*[DIM];
     for (long x = 0; x < DIM; x++)
