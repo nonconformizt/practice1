@@ -48,5 +48,4 @@ int main()
     printf("\n\n");
     swap(a, m);
 
-    system("pause");
 }
