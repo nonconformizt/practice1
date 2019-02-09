@@ -23,14 +23,14 @@ int main(){
 		max=Matrix[i][j];
 		max_i=i;
 		max_j=j;
-		for(int j=1;j<m;j++){
+		for(int j=0;j<m;j++){
 			if (max<Matrix[i][j]){
 				max=Matrix[i][j];
 				max_i=i;
 				max_j=j;
 			}
 		}
-		for (z=1;z<n;z++){
+		for (z=0;z<n;z++){
 			if (max>Matrix[z][max_j]) per=false;
 		}
 		if (per){
