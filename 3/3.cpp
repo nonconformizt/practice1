@@ -18,7 +18,7 @@ int main(){
 	read(&Matrix[0][0],n,m);
 	int count=0;
 	count=base_work(&Matrix[0][0],n,m,count);
-	std::cout<<"Answer is "<<count;
+	std::cout<<"Answer is "<<count << std::endl;
 	//write(&Matrix[0][0],n,m);
 	return 0;
 }
