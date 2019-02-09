@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-const int m = 10, n = 15;
+const int m = 100, n = 100;
 
 void read_M_N(int *p_M, int *p_N)
 {
