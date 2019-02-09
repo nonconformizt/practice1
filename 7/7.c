@@ -46,6 +46,7 @@ int main() {
         write(Matrix, m, n + 1);
     }else
     {
+    	printf("\n");
         write(Matrix, m, n);
     }
 
