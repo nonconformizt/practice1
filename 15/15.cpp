@@ -63,6 +63,5 @@ int main(void)
 	read(matrix);
 	result(matrix);
 
-	system("pause");
 	return 0;
 }
