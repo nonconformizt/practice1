@@ -1,6 +1,6 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 
 const int m = 100, n = 100;
 
@@ -70,7 +70,6 @@ void end_a(int a[m][n], int help[m][n], int M, int N)
 }
 int main()
 {
-	system("chcp 1251 > nul");
 
 	int i, j, M, N;
 	int a[m][n] = {0}, help[m][n] = { INT_MIN };
@@ -80,6 +79,5 @@ int main()
 	sort(a, M, N, help);
 	end_a(a, help, M, N);
 	
-	system("pause");
-	return 1;
+	return 0;
 }
