@@ -17,7 +17,6 @@ void swap( double* a, double* b )
 
 int main() {
     int col,i,j;
-    double temp;
     int m,n;
     double Matrix[row][co];
 
@@ -32,20 +31,24 @@ int main() {
     read(Matrix, m, n);
     write(Matrix, m, n);
     col = SeekColumn(Matrix, m, n);
-    
-    for(i = 0; i < m; i++)
-    {
-        for( j = n; j >= col; j-- ) {
-            if ( j == col )
-                Matrix[i][j] = 1;
-            else {
-                swap(&Matrix[i][j],&Matrix[i][j-1]);
+
+    if(col != -1) {
+        for (i = 0; i < m; i++) {
+            for (j = n; j >= col; j--) {
+                if (j == col)
+                    Matrix[i][j] = 1;
+                else {
+                    swap(&Matrix[i][j], &Matrix[i][j - 1]);
+                }
             }
         }
+        printf("\n");
+        write(Matrix, m, n + 1);
+    }else
+    {
+        write(Matrix, m, n);
     }
 
-    printf("\n");
-    write(Matrix, m, n + 1);
 
     return 0;
 
@@ -78,7 +81,7 @@ void write(double Matrix[][co],int m,int n)
 int SeekColumn(double Matrix[][co],int m,int n)
 {
     int i,j,f;
-    int col;
+    int col = -1;
     f = 0;
     for(i = 0;i < n; i++)
     {
