@@ -1,16 +1,14 @@
 #include <iostream>
 using namespace std;
 
-#define DIM 512
+#define DIM 100
 
-void read_matrix( float** M, int* m, int* n )
+void read_matrix( float** M, int* n )
 {
-    cout << "Введите высоту матрицы\n";
-    cin >> *m;
-    cout << "Введите ширину матрицы\n";
+    cout << "Введите размерность матрицы\n";
     cin >> *n;
     cout << "Вводите элементы матрицы\n";
-    for (int i = 0; i < *m; ++i) {
+    for (int i = 0; i < *n; ++i) {
         cout << "Строка " << i << endl;
         for (int j = 0; j < *n; ++j) {
             cin >> M[i][j];
@@ -28,33 +26,33 @@ void show_matrix( float** M, int m, int n )
     }
 }
 
-void swap(int *a, int *b)
+
+void count_avg( float** M, int n )
 {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+    long count, i, j;
+    float avg;
+
+    for (int x = n - 1; x <= 0; --x) { // пройти все диагонали
+        avg = count = 0;
+        j = x;
+        i = 0;
+        for ( ; j < n; j++, count++ ) {
+            avg += M[i][j];
+        }
+        avg /= count;
+        cout << "Среднее значение " << x << " диагонали равно " << avg;
+    }
 }
 
-void bubble_sort( float** M, int m, int n )
-{
-   int i, j;
-   for (i = 0; i < m; i++)
-       for (j = 0; j < m-i-1; j++)
-           if (M[j][0] > M[j+1][0])
-              swap(M[j], M[j+1]);
-}
 
 int main() {
     system("chcp 65001 > nul");
     int m, n;
-    float ** A = new float*[DIM];
+    auto ** A = new float*[DIM];
     for (long x = 0; x < DIM; x++)
         A[x] = new float[DIM];
 
-    read_matrix(A, &m, &n);
-    show_matrix(A, m, n);
-
-    bubble_sort(A, m, n);
+    read_matrix(A, &n);
     show_matrix(A, m, n);
 
     getchar();
