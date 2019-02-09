@@ -30,8 +30,8 @@ int main() {
     if(col != -1) {
         for (i = 0; i < m; i++) {
             temp = Matrix[i][col];
-            Matrix[i][col] = Matrix[i][p - 1];
-            Matrix[i][p - 1] = temp;
+            Matrix[i][col] = Matrix[i][p];
+            Matrix[i][p] = temp;
 //        Matrix[i][col] += Matrix[i][p];
 //        Matrix[i][p] = Matrix[i][col] - Matrix[i][p];
 //        Matrix[i][col] -= Matrix[i][p];
@@ -72,7 +72,7 @@ int SeekColumn(double Matrix[][100],int m,int n)
 {
     int i,j,f;
     int col = -1;
-
+    f = 0;
     for(i = 0;i < n;i++)
     {
         for(j = 0; j < m; j++)
@@ -82,7 +82,8 @@ int SeekColumn(double Matrix[][100],int m,int n)
         }
         if(f == 0)
         {
-            col = j-1;
+            col = i;
+            break;
         }
         f = 0;
     }

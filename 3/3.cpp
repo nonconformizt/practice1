@@ -7,7 +7,7 @@ bool check(int *A,int m,int n);
 int main(){
 	int m,n,i,j;
 	system("chcp 1251 >nul");
-	std::cout<<"¬ведите размеры матрицы(m на n) не больше 100 на 100:";
+	std::cout<<"Enter (m * n) dont bolshe 100 * 100:";
 	do{
 		std::cout<<"\n";
 		std::cin>>n>>m;
@@ -42,7 +42,7 @@ bool sravn(int *A,int i,int n,int m){
 		for (int j=0;j<m;j++){
 			if (*(A+k+j)==*(A+z)){
 				*(A+z)=-1;
-				//break;
+				break;
 			}
 		}
 	}

@@ -1,10 +1,9 @@
 #include <iostream>
 
 int main(){
-	system("chcp 1251 >nul");
 	int i,j,n,m;
 	int Matrix [100][100];
-	std::cout<<"¬ведите размеры матрицы(m на n) не больше 100 на 100:";
+	std::cout<<"Enter (m * n) dont bolshe 100 * 100:";
 	do{
 		std::cout<<"\n";
 		std::cin>>n>>m;
@@ -34,7 +33,7 @@ int main(){
 			if (max>Matrix[z][max_j]) per=false;
 		}
 		if (per){
-			std::cout<<"ќтвет:\n"<<"a["<<max_i<<"]["<<max_j<<"]="<<max;
+			std::cout<<"Otvet:\n"<<"a["<<max_i<<"]["<<max_j<<"]="<<max;
 			per1=false;
 			break;
 		}
