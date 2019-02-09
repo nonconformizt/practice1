@@ -45,5 +45,4 @@ int main()
     clean(a, m);
     output(a, m);
 
-    system("pause");
 }
