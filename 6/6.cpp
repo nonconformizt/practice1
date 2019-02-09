@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-const int m = 10, n = 15;
+const int m = 100, n = 100;
 
 void read_M_N(int *p_M, int *p_N)
 {
@@ -35,24 +35,24 @@ void sort(int a[m][n], int M,int N, int help[m][n])
 		{
 			if (i == 0)
 			{
-				if ((j == 0) && (a[i][j] < a[i][j + 1]) && (a[i][j] < a[i + 1][j])) help[i][j] = a[i][j];
+				if ((j == 0) && (a[i][j] < a[i][j + 1]) && (a[i][j] < a[i + 1][j]) && (a[i][j]<a[i+1][j+1])) help[i][j] = a[i][j];
 				else
-					if ((j == N-1) && (a[i][j] < a[i][j - 1]) && (a[i][j] < a[i + 1][j])) help[i][j] = a[i][j];
-					else if ((a[i][j] < a[i][j + 1]) && (a[i][j] < a[i][j - 1]) && (a[i][j] < a[i + 1][j])) help[i][j] = a[i][j];
+					if ((j == N-1) && (a[i][j] < a[i][j - 1]) && (a[i][j] < a[i + 1][j])&& (a[i][j]<a[i+1][j-1])) help[i][j] = a[i][j];
+					else if ((a[i][j] < a[i][j + 1]) && (a[i][j] < a[i][j - 1]) && (a[i][j] < a[i + 1][j])&&(a[i][j]<a[i+1][j-1])&&(a[i][j]<a[i+1][j+1])) help[i][j] = a[i][j];
 			}
 			else
 				if (i == M-1)
 				{
-					if ((j == 0) && (a[i][j] < a[i][j + 1]) && (a[i][j] < a[i - 1][j])) help[i][j] = a[i][j];
+					if ((j == 0) && (a[i][j] < a[i][j + 1]) && (a[i][j] < a[i - 1][j])&&(a[i][j]<a[i-1][j+1])) help[i][j] = a[i][j];
 					else
-						if ((j == N-1) && (a[i][j] < a[i][j - 1]) && (a[i][j] < a[i - 1][j])) help[i][j] = a[i][j];
-						else if ((a[i][j] < a[i][j + 1]) && (a[i][j] < a[i][j - 1]) && (a[i][j] < a[i - 1][j])) help[i][j] = a[i][j];
+						if ((j == N-1) && (a[i][j] < a[i][j - 1]) && (a[i][j] < a[i - 1][j])&&(a[i][j]<a[i-1][j-1])) help[i][j] = a[i][j];
+						else if ((a[i][j] < a[i][j + 1]) && (a[i][j] < a[i][j - 1]) && (a[i][j] < a[i - 1][j])&&(a[i][j]<a[i-1][j+1])&&(a[i][j]<a[i-1][j-1])) help[i][j] = a[i][j];
 				}
 				else
-					if ((j == 0) && (i > 0) && (i < M) && (a[i][j] < a[i][j + 1]) && (a[i][j] < a[i + 1][j]) && (a[i][j]<a[i - 1][j])) help[i][j] = a[i][j];
+					if ((j == 0) && (i > 0) && (i < M) && (a[i][j] < a[i][j + 1]) && (a[i][j] < a[i + 1][j]) && (a[i][j]<a[i - 1][j])&&(a[i][j]<a[i-1][j+1])&&(a[i][j]<a[i+1][j+1])) help[i][j] = a[i][j];
 					else
-						if ((j == N-1) && (i >= 1) && (i <= M - 1) && (a[i][j] < a[i][j + 1]) && (a[i][j] < a[i + 1][j]) && (a[i][j]<a[i - 1][j])) help[i][j] = a[i][j];
-						else if ((a[i][j] < a[i + 1][j]) && (a[i][j] < a[i - 1][j]) && (a[i][j] < a[i][j + 1]) && (a[i][j] < a[i][j - 1])) help[i][j] = a[i][j];
+						if ((j == N-1) && (i >= 1) && (i <= M - 1) && (a[i][j] < a[i][j - 1]) && (a[i][j] < a[i + 1][j]) && (a[i][j]<a[i - 1][j])&&(a[i][j]<a[i+1][j-1])&&(a[i][j]<a[i-1][j-1])) help[i][j] = a[i][j];
+						else if ((a[i][j] < a[i + 1][j]) && (a[i][j] < a[i - 1][j]) && (a[i][j] < a[i][j + 1]) && (a[i][j] < a[i][j - 1])&&(a[i][j]<a[i-1][j-1])&&(a[i][j]<a[i-1][j+1])&&(a[i][j]<a[i+1][j-1])&&(a[i][j]<a[i+1][j+1])) help[i][j] = a[i][j];
 		}
 }
 
