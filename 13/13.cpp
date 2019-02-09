@@ -48,6 +48,5 @@ int main()
 	read(matrix);
 	result(matrix);
 
-	system("pause");
 	return 0;
 }
